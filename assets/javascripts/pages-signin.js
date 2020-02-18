@@ -15,6 +15,6 @@ function login() {
     
     localStorage.setItem("connecteduser", JSON.stringify(connecteduser));
   } else {
-    alert("Fausses Informations");
+    alert("Information Incorrecte");
   } 
 }
