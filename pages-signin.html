@@ -39,11 +39,11 @@
 <h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> Sign In</h2>
 </div>
 <div class="panel-body">
-<form action="https://colorlib.com/polygon/octopus/index.html" method="post">
+<form >
 <div class="form-group mb-lg">
-<label>Username</label>
+<label >Username</label>
 <div class="input-group input-group-icon">
-<input name="username" type="text" class="form-control input-lg" />
+<input name="username" id="username" type="text" class="form-control input-lg" />
 <span class="input-group-addon">
 <span class="icon icon-lg">
 <i class="fa fa-user"></i>
@@ -57,7 +57,7 @@
 <a href="pages-recover-password.html" class="pull-right">Lost Password?</a>
 </div>
 <div class="input-group input-group-icon">
-<input name="pwd" type="password" class="form-control input-lg" />
+<input name="pwd" id="password" type="password" class="form-control input-lg" />
 <span class="input-group-addon">
 <span class="icon icon-lg">
 <i class="fa fa-lock"></i>
@@ -73,8 +73,8 @@
 </div>
 </div>
 <div class="col-sm-4 text-right">
-<button type="submit" class="btn btn-primary hidden-xs">Sign In</button>
-<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
+<button type="submit" class="btn btn-primary hidden-xs"onclick="login()">Sign In</button>
+<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg" onclick="login()">Sign In</button>
 </div>
 </div>
 <span class="mt-lg mb-lg line-thru text-center text-uppercase">
@@ -82,7 +82,7 @@
 </span>
 <div class="mb-xs text-center">
 <a class="btn btn-facebook mb-md ml-xs mr-xs">Connect with <i class="fa fa-facebook"></i></a>
-<a class="btn btn-twitter mb-md ml-xs mr-xs">Connect with <i class="fa fa-twitter"></i></a>
+<a class="btn btn-twitter mb-md ml-xs mr-xs" >Connect with <i class="fa fa-twitter"></i></a>
 </div>
 <p class="text-center">Don't have an account yet? <a href="pages-signup.html">Sign Up!</a>
 </form>
@@ -91,7 +91,8 @@
 
 </div>
 </section>
-
+<script  src="./assets/javascripts/pages-signup.js"></script>
+<script  src="./assets/javascripts/pages-signin.js"></script>
 
 <script src="assets/vendor/jquery/jquery.js" type="6b4d3c69dc5709d4d8045a94-text/javascript"></script> <script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js" type="6b4d3c69dc5709d4d8045a94-text/javascript"></script> <script src="assets/vendor/bootstrap/js/bootstrap.js" type="6b4d3c69dc5709d4d8045a94-text/javascript"></script> <script src="assets/vendor/nanoscroller/nanoscroller.js" type="6b4d3c69dc5709d4d8045a94-text/javascript"></script> <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js" type="6b4d3c69dc5709d4d8045a94-text/javascript"></script> <script src="assets/vendor/magnific-popup/magnific-popup.js" type="6b4d3c69dc5709d4d8045a94-text/javascript"></script> <script src="assets/vendor/jquery-placeholder/jquery.placeholder.js" type="6b4d3c69dc5709d4d8045a94-text/javascript"></script>
 
