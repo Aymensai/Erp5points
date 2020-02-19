@@ -37,7 +37,11 @@ valid.forEach(acc =>{
         for (let i = 0; i < user.length; i++) {
             
             if(id == user[i].id){
-                user[i].status = "accepted";
+                if (!user[i].role) {
+                    alert('Add role')
+                } else {
+                    user[i].status = "accepted";
+                }
                 console.log(user[i]);
                 
             };
