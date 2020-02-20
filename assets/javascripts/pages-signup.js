@@ -16,7 +16,12 @@ function newuser() {
       status: "",
       username: username.value,
       password: password.value,
-      email: email.value
+      email: email.value,
+      Nom:"",
+      Prenom:"",
+      Adresse:"",
+      Poste:"",
+      Tel:"",
     };
     neww.push(text);
 
