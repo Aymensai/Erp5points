@@ -12,6 +12,7 @@ function newuser() {
   } else {
     var text = {
       id: userid,
+      team_id:"",
       role: "",
       status: "",
       username: username.value,

@@ -30,8 +30,8 @@
   <script src="assets/vendor/modernizr/modernizr.js" type="6e009783544cedb6e8649c2f-text/javascript"></script>
 </head>
 
-<body onload="Pinformation()">
-  <script  src="assets/javascripts/User-Profile.js"></script>
+<body onload="Pinformation(); reclamation()" >
+  
   <section class="body">
     <header class="header">
       <div class="logo-container">
@@ -946,15 +946,18 @@
                 <li>
                   <a href="#edit" data-toggle="tab">Editer Votre Profil</a>
                 </li>
+                <li>
+                  <a href="#reclamation" data-toggle="tab">Reclamations</a>
+                </li>
               </ul>
               <div class="tab-content">
                 <div id="overview" class="tab-pane active">
-                  <h4 class="mb-md">Update Status</h4>
-                  <section class="simple-compose-box mb-xlg">
-                    <form method="get" action="https://colorlib.com/">
+                  <!-- <h4 class="mb-md">Update Status</h4> -->
+                  <section >
+                    <!-- <form method="get" action="https://colorlib.com/">
                       <textarea name="message-text" data-plugin-textarea-autosize
                         placeholder="Veuillez Poster Vos Reclamation?" rows="1"></textarea>
-                    </form>
+                    </form> -->
                     <div class="compose-box-footer">
                       <!-- <ul class="compose-toolbar"> -->
                       <!-- <li>
@@ -964,11 +967,11 @@
                             <a href="#"><i class="fa fa-map-marker"></i></a>
                           </li> -->
                       <!-- </ul> -->
-                      <ul class="compose-btn">
+                      <!-- <ul class="compose-btn">
                         <li>
                           <a class="btn btn-primary btn-xs">Poster</a>
                         </li>
-                      </ul>
+                      </ul> -->
                     </div>
 
 
@@ -1059,8 +1062,7 @@
                           <div class="tm-body">
                             <div class="tm-title">
                               <h3 class="h5 text-uppercase">Adresse Mail</h3>
-                              <ol class="tm-items">
-                                <li>
+                              
                               <ol class="tm-items">
                                 <li>
                                   <div class="tm-box">
@@ -1219,6 +1221,179 @@
                     </div>
                   </form>
                 </div>
+                <div id="reclamation" class="tab-pane ">
+                  <h4 class="mb-md">Update Status</h4>
+                  <section class="simple-compose-box mb-xlg">
+                    <form method="get" action="https://colorlib.com/">
+                      <textarea name="message-text" data-plugin-textarea-autosize
+                        placeholder="Veuillez Poster Vos Reclamation?" rows="1" id="txt"></textarea>
+                    </form>
+                    <div class="compose-box-footer">
+                      <!-- <ul class="compose-toolbar"> -->
+                      <!-- <li>
+                            <a href="#"><i class="fa fa-camera"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="fa fa-map-marker"></i></a>
+                          </li> -->
+                      <!-- </ul> -->
+                      <ul class="compose-btn">
+                        <li>
+                          <a class="btn btn-primary btn-xs" onclick="reclam()">Poster</a>
+                        </li>
+                      </ul>
+                    </div>
+
+
+                  </section>
+
+                  <div>
+
+                    <h4 class="mb-xlg">Vos Reclamations</h4>
+                    <div class="timeline timeline-simple mt-xlg mb-md">
+                     
+                       
+                          
+                          <ul id="Reclam" class="tm-items">
+                            
+                              
+                                
+                               
+                            
+                            
+                            </ul>
+                       
+                   
+                    </div>
+                    <!-- <ol class="tm-items"> -->
+                    <!-- <div class="timeline timeline-simple mt-xlg mb-md">
+                      <div class="tm-body">
+                        <div class="tm-title">
+                          <h3 class="h5 text-uppercase">Prenom</h3>
+                          <ol class="tm-items">
+                            <li>
+                          <div class="tm-box">
+                            <p class="text-muted mb-none" ></p>
+                           <a id="displayprenom"></a>
+                          </div>
+                        </li>
+                        </ol>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- <ol class="tm-items"> -->
+                    <!-- <div class="timeline timeline-simple mt-xlg mb-md">
+                      <div class="tm-body">
+                        <div class="tm-title">
+                          <h3 class="h5 text-uppercase">Adresse</h3>
+                          <ol class="tm-items">
+                            <li>
+                          <div class="tm-box">
+                            <p class="text-muted mb-none" ></p>
+                           <a id="adresse"></a>
+                          </div>
+                        </li>
+                        </ol>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- <ol class="tm-items"> -->
+                    <!-- <div class="timeline timeline-simple mt-xlg mb-md">
+                      <div class="tm-body">
+                        <div class="tm-title">
+                          <h3 class="h5 text-uppercase">Poste Occupee</h3>
+                          <ol class="tm-items">
+                            <li>
+                          <div class="tm-box">
+                            <p class="text-muted mb-none" ></p>
+                           <a id="Poccupe"></a>
+                          </div>
+                        </li>
+                        </ol>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- <ol class="tm-items"> -->
+                    <!-- <div class="timeline timeline-simple mt-xlg mb-md">
+                      <div class="tm-body">
+                        <div class="tm-title">
+                          <h3 class="h5 text-uppercase">Numero De Telephone</h3>
+                          <ol class="tm-items">
+                            <li>
+                          <div class="tm-box">
+                            <p class="text-muted mb-none" ></p>
+                           <a id="Numero"></a>
+                          </div>
+                        </li>
+                        </ol>
+                        </div> -->
+                        <!-- <ol class="tm-items"> -->
+                        <!-- <div class="timeline timeline-simple mt-xlg mb-md">
+                          <div class="tm-body">
+                            <div class="tm-title">
+                              <h3 class="h5 text-uppercase">Adresse Mail</h3>
+                              
+                              <ol class="tm-items">
+                                <li>
+                                  <div class="tm-box">
+                                    <p class="text-muted mb-none" ></p>
+                                   <a id="mail"></a>
+                                  </div>
+                                </li>
+                                </ol>
+                            </div>
+                          </div>
+                        </div> -->
+                        <!-- <li>
+                            <div class="tm-box">
+                              <p class="text-muted mb-none">7 months ago.</p>
+                              <p>
+                                It's awesome when we find a good solution for
+                                our projects, Porto Admin is
+                                <span class="text-primary">#awesome</span>
+                              </p>
+                            </div>
+                          </li> -->
+                        <!-- <li> -->
+                        <!-- <div class="tm-box"> -->
+                        <!-- <p class="text-muted mb-none">7 months ago.</p>
+                              <p>
+                                What is your biggest developer pain point?
+                              </p> -->
+                        <!-- </div> -->
+                        <!-- </li> -->
+                        <!-- <li> -->
+                        <!-- <div class="tm-box"> -->
+                        <!-- <p class="text-muted mb-none">7 months ago.</p>
+                              <p> -->
+                        <!-- Checkout! How cool is that!
+                              </p> -->
+                        <!-- <div class="thumbnail-gallery"> -->
+                        <!-- <a
+                                  class="img-thumbnail lightbox"
+                                  href="assets/images/projects/project-4.jpg"
+                                  data-plugin-options='{ "type":"image" }'
+                                >
+                                  <img
+                                    class="img-responsive"
+                                    width="215"
+                                    src="assets/images/projects/project-4.jpg"
+                                  /> -->
+                        <!-- <span class="zoom">
+                                    <i class="fa fa-search"></i> -->
+                        <!-- </span>
+                                </a>
+                              </div>
+                            </div> -->
+                        <!-- </li> -->
+                        <!-- </ol> -->
+                        <!-- </div>
+                    </div>
+                  </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               
             </div>
@@ -1373,7 +1548,7 @@
     </div>
   </aside>
   </section>
-  
+  <script  src="assets/javascripts/User-Profile.js"></script>
   <script src="assets/vendor/jquery/jquery.js" type="6e009783544cedb6e8649c2f-text/javascript"></script>
   <script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"
     type="6e009783544cedb6e8649c2f-text/javascript"></script>

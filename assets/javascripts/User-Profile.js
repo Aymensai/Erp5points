@@ -42,4 +42,43 @@ var email = document.getElementById("email");
    
    
  }
+function reclam() {
+    var owner = JSON.parse(localStorage.getItem("connecteduser"))|| ""; 
+    var txt=document.getElementById('txt');
+    var reclamations=JSON.parse(localStorage.getItem("reclamations")) || [];
+    var id= Math.floor(Math.random() * 1000); 
+var objet = {
+id:id,
+user:owner.id,
+txt:txt.value
+
+}
+    reclamations.push(objet);
+    localStorage.setItem('reclamations', JSON.stringify(reclamations));
+}
+
+
+ function reclamation() {
+     
+  var owner=JSON.parse(localStorage.getItem("reclamations")) || [];
+  var id=JSON.parse(localStorage.getItem("connecteduser")).id;
+   
+   
+
+    for (let i = 0; i < owner.length; i++) {
+      
+        
+     if (owner[i].user==id) {
+        var node = document.createElement("li");
+        var textnode =  document.createTextNode(owner[i].txt);
+          var reclam =document.getElementById("Reclam");
     
+   
+    node.appendChild(textnode);
+    reclam.appendChild(node);
+    
+    
+}
+ }
+ 
+} 
