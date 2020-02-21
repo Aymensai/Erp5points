@@ -1,4 +1,17 @@
+var img = "";
 
+function openFile(event) {
+    var input = event.target;
+    var reader = new FileReader();
+    reader.onload = function () {
+        img = reader.result;
+        console.log(img);
+
+    };
+    reader.readAsDataURL(input.files[0]);
+
+}
+//
 function Uinformation() {
     
     var text= JSON.parse(localStorage.getItem('connecteduser')) || "";
@@ -7,8 +20,8 @@ function Uinformation() {
     var Adresse=document.getElementById('Adresse');
     var Tel=document.getElementById('Tel');
     var Poste=document.getElementById('Poste');
-  
-var email = document.getElementById("email");
+    
+
   
     var text = {
         id: text.id,
@@ -24,7 +37,6 @@ var email = document.getElementById("email");
  Tel:Tel.value,
 
        }
-       console.log(text);
        
     
  
