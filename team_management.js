@@ -5,6 +5,9 @@ let user = JSON.parse(localStorage.getItem("user"));
 let lead_name = document.querySelector(".lead_name");
 let emp_name = document.querySelector(".username");
 let team_list = document.querySelector("#team_list");
+let chips_list = document.querySelector("#chips_list");
+let list = [];
+let sup = [];
 
 let gen_lead = sel => {
   if (sel.role == "Superviser") {
@@ -26,6 +29,16 @@ let gen_emp = sel => {
 user.forEach(em => {
   gen_emp(em);
 });
+
+let gen_chpis = el=>{
+    let chip = `
+    <div class="chip">
+    ${el.username}
+    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+    </div>
+    `;
+    chips_list.innerHTML += chip;
+}
 
 let row_gen = document.querySelector("#row_gen");
 let table = document.querySelector("#table");
@@ -60,7 +73,7 @@ let gen_team = tab => {
   <div>
   <h4></h4>
   <h2 class="panel-title">Team Lead</h2>
-  <span class="lead_name panel-title"></span>
+  <span class="lead_name panel-title">${tab.username}</span>
   </div>
   </header>
   <div class="panel-body">
@@ -93,6 +106,11 @@ lead.addEventListener(
   () => {
     lead_name.innerText = lead.options[lead.selectedIndex].text;
     lead.remove(lead.selectedIndex);
+    let on = user.find(x => x.username == lead_name.innerText);
+    sup.push(on);
+    
+    gen_chpis(on);
+    console.log(list);
   },
   false
 );
@@ -102,14 +120,22 @@ empl.addEventListener(
   () => {
     emp_name.innerText = empl.options[empl.selectedIndex].text;
     let one = user.find(x => x.username == emp_name.innerText);
-    empl_gen(one);
+    // empl_gen(one);
     empl.remove(empl.selectedIndex);
+    list.push(one);
+    
+    gen_chpis(one)
+    console.log(list);
   },
   false
 );
 
+
 b_new.addEventListener("click", () => {
   let t = document.createElement("li");
-  t.innerHTML = gen_team();
+  console.log(list);
+  console.log(sup);
+  
+  t.innerHTML = gen_team(sup);
   row_gen.prepend(t);
 });

@@ -80,23 +80,23 @@ role.forEach(el => {
 let list_edit = document.querySelector(".employee_view");
 // let modalHeaderColorPrimary = document.querySelector("#modalHeaderColorPrimary");
 // let mod = document.getElementsByClassName("modal_view");
-let empl_view_gen_refresh = empl => {
-    return row = `
-        <tr >
-            <td>${empl.id}</td>
-            <td class="text-semibold text-dark">
-                ${empl.username}
-            </td>
+// let empl_view_gen_refresh = empl => {
+//     return row = `
+//         <tr >
+//             <td>${empl.id}</td>
+//             <td class="text-semibold text-dark">
+//                 ${empl.username}
+//             </td>
             
-            <td  class="text-center">
-                <div id="${empl.id}">
-                  <i class="fa fa-trash-o trash btn modal-basic" onclick="getUser(${empl.id})" href="#modalHeaderColorPrimary"></i>
-                  <i class="fa fa-eye view"></i>
-                </div>
-            </td>
-        </tr>
-        `;
-  };
+//             <td  class="text-center">
+//                 <div id="${empl.id}">
+//                   <i class="fa fa-trash-o trash btn modal-basic" onclick="getUser(${empl.id})" href="#modalHeaderColorPrimary"></i>
+//                   <i class="fa fa-eye view"></i>
+//                 </div>
+//             </td>
+//         </tr>
+//         `;
+//   };
 let empl_view_gen = empl => {
   let row = `
       <tr >
@@ -107,7 +107,7 @@ let empl_view_gen = empl => {
           
           <td  class="text-center">
               <div id="${empl.id}">
-                <i class="fa fa-trash-o trash btn modal-basic" onclick="getUser(${empl.id})" href="#modalHeaderColorPrimary"></i>
+                <i class="fa fa-trash-o trash btn modal-basic" " href="#modalHeaderColorPrimary"></i>
                 <i class="fa fa-eye view"></i>
               </div>
           </td>
@@ -126,48 +126,49 @@ let confirm = document.querySelector("#modal-confirm");
 let cancel = document.querySelector("#modal-cancel");
 
 let r = 0;
-function deleteUser() {
-    const u = user.map(us => {return us.id}).indexOf(idUserTodelete);
-    user.splice(u,1);
-    localStorage.setItem("user", JSON.stringify(user));
-    // let html = '';
-    // user.forEach(users => {
-    //     html += empl_view_gen_refresh(users);
-    //   });
-      var el = document.getElementById(idUserTodelete);
-      el.parentElement.parentElement.innerHTML = "";
-      console.log(el.parentElement.parentElement);
+// function deleteUser() {
+//     const u = user.map(us => {return us.id}).indexOf(idUserTodelete);
+//     user.splice(u,1);
+//     localStorage.setItem("user", JSON.stringify(user));
+//     // let html = '';
+//     // user.forEach(users => {
+//     //     html += empl_view_gen_refresh(users);
+//     //   });
+//       var el = document.getElementById(idUserTodelete);
+//       el.parentElement.parentElement.innerHTML = "";
+//       console.log(el.parentElement.parentElement);
       
-    //   list_edit.innerHTML = html;
+//     //   list_edit.innerHTML = html;
 
-    //   window.location.reload();
-    //   var edit = document.getElementById("edit");
-    //   edit.className += " active";
-}
-function getUser (id) {
-    idUserTodelete = id
+//     //   window.location.reload();
+//     //   var edit = document.getElementById("edit");
+//     //   edit.className += " active";
+// }
+// function getUser (id) {
+//     idUserTodelete = id
     
-}
-// del.forEach(trash => {
-//   trash.addEventListener("click", e => {
-//     let id = e.target.parentElement.id;
-//     var u = user.find(us => us.id == id)
+// }
+del.forEach(trash => {
+  trash.addEventListener("click", e => {
+    let id = e.target.parentElement.id;
+    var u = user.find(us => us.id == id)
     
-//     if (u) {
-//         // alert("are you sur you want to delete this one?");
-//         // confirm.forEach(conf=>{
-//             confirm.addEventListener("click", () => {
-//                 const u = user.map(us => {return us.id}).indexOf(id);
-//                 user.splice(u,1);
-//                 // e.target.parentElement.parentElement.parentElement.remove();
-//                 // console.log(user);
-//                 localStorage.setItem("user", JSON.stringify(user));
-//                 // new PNotify({
-//                 //     title: 'Success!',
-//                 //     text: 'Employee Removed.',
-//                 //     type: 'success'
+    if (u) {
+            confirm.addEventListener("click", () => {
+                const i = user.indexOf(u);
+                user.splice(i,1);
+                e.target.parentElement.parentElement.parentElement.remove();
+                localStorage.setItem("user", JSON.stringify(user));
+                // new PNotify({
+                //     title: 'Success!',
+                //     text: 'Employee Removed.',
+                //     type: 'success'
 
-//                 // });
+                // });
+            });
+        };
+    });
+});
 //                 r++;
 //                 let del = document.querySelectorAll(".trash");
 // del = document.querySelectorAll(".trash");

@@ -28,6 +28,17 @@
 <link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
 
 <script src="assets/vendor/modernizr/modernizr.js" type="32f697c9a88f2ebc08c9c8ad-text/javascript"></script>
+<style>
+  .chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: lightblue;
+}
+</style>
 </head>
 <body>
 <section class="body">
@@ -1027,9 +1038,10 @@ Scroll
     <option value=""></option>
   </select>
 </div>
+<span id="chips_list"></span>
 <ul id="row_gen">
   <li>
-<div class="row">
+<div class="row hide">
 <div id="table" class="col-md-8">
 <section class="panel">
 <header class="panel-heading">
