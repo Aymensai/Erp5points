@@ -30,7 +30,7 @@
   <script src="assets/vendor/modernizr/modernizr.js" type="6e009783544cedb6e8649c2f-text/javascript"></script>
 </head>
 
-<body onload="Pinformation(); reclamation()" >
+<body onload="Pinformation(); reclamation();  profile(); loadFile (); Users()" >
   
   <section class="body">
     <header class="header">
@@ -736,14 +736,17 @@
             <section class="panel">
               <div class="panel-body">
                 <div class="thumb-info mb-md">
-                  <img src="assets/images/%21logged-user.jpg" class="rounded img-responsive" alt="John Doe" />
+                  <img id="image" src="assets/images/%21logged-user.jpg" class="rounded img-responsive" />
+                  <input type="file"  accept="image/*" onchange="openFile(event)">
+                  <button type="button" value="Save" class="btn btn-default" onclick="picture()">Save</button>
                   <div class="thumb-info-title">
-                    <i class="fa fa-edit"></i>
-                    <span class="thumb-info-inner">John Doe</span>
-                    <span class="thumb-info-type">CEO</span>
+                    <!-- <i class="fa fa-edit"></i> -->
+                    <span class="thumb-info-inner" id="Pname"></span>
+                    <span class="thumb-info-type" id="Pposte"></span>
                   </div>
                 </div>
-                <div class="widget-toggle-expand mb-md">
+            
+                <!-- <div class="widget-toggle-expand mb-md">
                   <div class="widget-header">
                     <h6>Profile Completion</h6>
                     <div class="widget-toggle">+</div>
@@ -764,8 +767,8 @@
                       <li>Follow Someone</li>
                     </ul>
                   </div>
-                </div>
-                <hr class="dotted short" />
+                </div> -->
+                <!-- <hr class="dotted short" /> -->
                 
                 <div class="clearfix">
                   

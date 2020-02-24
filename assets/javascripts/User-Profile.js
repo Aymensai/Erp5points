@@ -11,7 +11,7 @@ function openFile(event) {
     reader.readAsDataURL(input.files[0]);
 
 }
-//
+
 function Uinformation() {
     
     var text= JSON.parse(localStorage.getItem('connecteduser')) || "";
@@ -24,9 +24,12 @@ function Uinformation() {
 
   
     var text = {
-        id: text.id,
+      id: text.id,
+      team_id:"",
+      team_name:"",
       role: "",
       status: "",
+      img:"",
       username: text.username,
       password: text.password,
       email: text.email,
@@ -94,3 +97,38 @@ txt:txt.value
  }
  
 } 
+function profile() {
+    var user=JSON.parse(localStorage.getItem('connecteduser')) || "";
+    var name=user.Nom;
+    var Prenom=user.Prenom;
+    document.getElementById('Pname').innerHTML=name+" "+Prenom;
+    document.getElementById('Pposte').innerHTML=user.Poste;  
+}
+function picture() {
+    
+  
+        var jpg = {
+     img:img,
+        }
+    localStorage.setItem('image', JSON.stringify(jpg));
+    window.location.reload();
+    
+    
+}
+function loadFile () {
+    var img=JSON.parse(localStorage.getItem('image'));
+    document.getElementById('image').src = img.img;  
+  };
+  function Users() {
+    var user = JSON.parse(localStorage.getItem("user")) || [];
+    var connecteduser=JSON.parse(localStorage.getItem('connecteduser')) || "";
+    let s = user.find(w => w.id == connecteduser.id);
+    let i = user.indexOf(s);
+    user[i]=connecteduser;
+    localStorage.setItem("user", JSON.stringify(user));
+    }
+  function img() {
+    var user = JSON.parse(localStorage.getItem("user")) || [];
+    var img=JSON.parse(localStorage.getItem('image'));
+    
+  }

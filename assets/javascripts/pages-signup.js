@@ -13,6 +13,7 @@ function newuser() {
     var text = {
       id: userid,
       team_id:"",
+      team_name:"",
       role: "",
       status: "",
       username: username.value,
@@ -23,6 +24,7 @@ function newuser() {
       Adresse:"",
       Poste:"",
       Tel:"",
+      img:"",
     };
     neww.push(text);
 
