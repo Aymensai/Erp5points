@@ -1,11 +1,11 @@
-var img = "";
+var imgFile = "";
 
 function openFile(event) {
     var input = event.target;
     var reader = new FileReader();
     reader.onload = function () {
-        img = reader.result;
-        console.log(img);
+        imgFile = reader.result;
+        console.log(imgFile);
 
     };
     reader.readAsDataURL(input.files[0]);
@@ -104,20 +104,10 @@ function profile() {
     document.getElementById('Pname').innerHTML=name+" "+Prenom;
     document.getElementById('Pposte').innerHTML=user.Poste;  
 }
-function picture() {
-    
-  
-        var jpg = {
-     img:img,
-        }
-    localStorage.setItem('image', JSON.stringify(jpg));
-    window.location.reload();
-    
-    
-}
+
 function loadFile () {
-    var img=JSON.parse(localStorage.getItem('image'));
-    document.getElementById('image').src = img.img;  
+    var img=JSON.parse(localStorage.getItem('connecteduser')).img;
+    document.getElementById('image').src = img;  
   };
   function Users() {
     var user = JSON.parse(localStorage.getItem("user")) || [];
@@ -127,9 +117,12 @@ function loadFile () {
     user[i]=connecteduser;
     localStorage.setItem("user", JSON.stringify(user));
     }
-  function img() {
-    var user = JSON.parse(localStorage.getItem("user")) || [];
-    var img=JSON.parse(localStorage.getItem('image'));
-    user.img=img.img;
-    localStorage.setItem("user", JSON.stringify(user));
+  function imgfun() {
+     
+    var connecteduser=JSON.parse(localStorage.getItem('connecteduser')) || "";
+    
+    connecteduser.img = imgFile;
+    
+    localStorage.setItem("connecteduser", JSON.stringify(connecteduser));
+    window.location.reload();
   }
