@@ -26,7 +26,7 @@ function Uinformation() {
     var text = {
       id: text.id,
       team_id:"",
-      team_name:"",
+     
       role: "",
       status: "",
       img:"",
@@ -130,5 +130,6 @@ function loadFile () {
   function img() {
     var user = JSON.parse(localStorage.getItem("user")) || [];
     var img=JSON.parse(localStorage.getItem('image'));
-    
+    user.img=img.img;
+    localStorage.setItem("user", JSON.stringify(user));
   }

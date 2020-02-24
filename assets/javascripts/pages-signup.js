@@ -13,7 +13,7 @@ function newuser() {
     var text = {
       id: userid,
       team_id:"",
-      team_name:"",
+      
       role: "",
       status: "",
       username: username.value,
