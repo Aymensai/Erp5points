@@ -94,7 +94,7 @@ txt:txt.value
     
     
 }
- }
+ } 
  
 } 
 function profile() {
