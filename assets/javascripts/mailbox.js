@@ -71,11 +71,13 @@ function checkmail() {
    <p class="panel-title" id="">${name+" "+Prenom} <i class="fa fa-angle-right fa-fw"></i> You</p>
    </div>
    <div class="panel-body">
+   
    <p>${text[i].txt}</p>
-   <p></p>
+ 
    </div>
    <div class="panel-footer">
-   <p class="m-none"><small></small></p>
+   <button id="modal-confirm" class="btn btn-primary modal-confirm">Resolu</button>
+  
    </div>
    </div>
    </div>

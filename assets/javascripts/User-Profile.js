@@ -63,8 +63,10 @@ function reclam() {
     var reclamations=JSON.parse(localStorage.getItem("reclamations")) || [];
     var id= Math.floor(Math.random() * 1000); 
 var objet = {
+
 id:id,
 user:owner.id,
+status:"",
 txt:txt.value
 
 }
