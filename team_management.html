@@ -1029,7 +1029,7 @@ Scroll
 </section>
 </div>
 </div> -->
-<button id="new_team">Add a new Team</button>
+
 <div id="select_team">
   <select  id="team_lead">
     <option value=""></option>
@@ -1038,10 +1038,16 @@ Scroll
     <option value=""></option>
   </select>
 </div>
+<form id="team_name">
+  <div>
+    <input type="text" name="name">
+    <button type="submit" id="new_team">Add a new Team</button>
+  </div>
+</form>
 <span id="chips_list"></span>
 <ul id="row_gen">
   <li>
-<div class="row hide">
+<div class="row team-table hide">
 <div id="table" class="col-md-8">
 <section class="panel">
 <header class="panel-heading">
@@ -1066,7 +1072,7 @@ Scroll
 <th>Actions</th>
 </tr>
 </thead>
-<tbody id="team_list" class="team_list">
+<tbody  class="team_list">
 <tr class="hide">
   <td></td>
   <td></td>
