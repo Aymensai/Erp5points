@@ -7,15 +7,17 @@ function newuser() {
 
   var userid = Math.floor(Math.random() * 1000);
 
-  if (username.value == "" && password.value == "" && email.value == "" && password.value==confirm.value) {
+  if (username.value == "" && password.value == "" && email.value == "" ) {
     alert("You must write something!");
-  } else {
+  } else if (password.value!=confirm.value) { 
+    alert('Verifiez Votre MDP!')
+  } else{
     var text = {
       id: userid,
       team_id:"",
-      
       role: "",
       status: "",
+     
       username: username.value,
       password: password.value,
       email: email.value,
@@ -29,6 +31,7 @@ function newuser() {
     neww.push(text);
 
     localStorage.setItem("user", JSON.stringify(neww));
-  }
+    window.location.href = "pages-signin.html";
+  } 
 }
 

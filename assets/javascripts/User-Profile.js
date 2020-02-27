@@ -66,7 +66,7 @@ var objet = {
 
 id:id,
 user:owner.id,
-status:"",
+Recstatus:"Unresolved",
 txt:txt.value
 
 }
@@ -104,12 +104,16 @@ function profile() {
     var name=user.Nom;
     var Prenom=user.Prenom;
     document.getElementById('Pname').innerHTML=name+" "+Prenom;
-    document.getElementById('Pposte').innerHTML=user.Poste;  
+    document.getElementById('Pposte').innerHTML=user.Poste; 
+    document.getElementById('sname').innerHTML=name+" "+Prenom; 
+    document.getElementById('sPoste').innerHTML=user.Poste; 
 }
 
 function loadFile () {
     var img=JSON.parse(localStorage.getItem('connecteduser')).img;
-    document.getElementById('image').src = img;  
+    document.getElementById('image').src = img; 
+    document.getElementById('im').src = img; 
+
   };
   function Users() {
     var user = JSON.parse(localStorage.getItem("user")) || [];

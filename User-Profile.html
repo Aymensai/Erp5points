@@ -34,15 +34,15 @@
   
   <section class="body">
     <header class="header">
-      <div class="logo-container">
-        <!-- <a href="https://colorlib.com/polygon/" class="logo">
-            <img src="assets/images/logo.png" height="35" alt="Porto Admin" />
+      <!-- <div class="logo-container">
+        <a href="https://colorlib.com/polygon/" class="logo">
+            <img src="" height="35" alt="Porto Admin" />
           </a> -->
-        <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
+        <!-- <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
           data-fire-event="sidebar-left-opened">
           <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
         </div>
-      </div>
+      </div> -->
 
       <div class="header-right">
         <form action="https://colorlib.com/polygon/octopus/pages-search-results.html" class="search nav-form">
@@ -54,9 +54,9 @@
               </button>
             </span>
           </div>
-        </form>
-        <span class="separator"></span>
-        <ul class="notifications">
+         </form>
+        <!-- <span class="separator"></span> -->
+        <!--<ul class="notifications">
           <li>
             <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
               <i class="fa fa-tasks"></i>
@@ -184,8 +184,8 @@
             <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
               <i class="fa fa-bell"></i>
               <span class="badge">3</span>
-            </a>
-            <div class="dropdown-menu notification-menu">
+            </a>  -->
+            <!-- <div class="dropdown-menu notification-menu">
               <div class="notification-title">
                 <span class="pull-right label label-default">3</span>
                 Alerts
@@ -227,17 +227,17 @@
               </div>
             </div>
           </li>
-        </ul>
+        </ul> -->
         <span class="separator"></span>
-        <div id="userbox" class="userbox">
+        <div id="userbox" class="userbox" >
           <a href="#" data-toggle="dropdown">
             <figure class="profile-picture">
-              <img src="assets/images/%21logged-user.jpg" alt="Joseph Doe" class="img-circle"
+              <img src="assets/images/%21logged-user.jpg" alt="Joseph Doe" id="im"  class="img-circle"
                 data-lock-picture="assets/images/%21logged-user.jpg" />
             </figure>
             <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-              <span class="name">Admin</span>
-              <span class="role">administrator</span>
+              <span class="name" id="sname"></span>
+             <span class="role" id="sPoste"></span>
             </div>
             <i class="fa custom-caret"></i>
           </a>
@@ -276,15 +276,15 @@
           <div class="nano-content">
             <nav id="menu" class="nav-main" role="navigation">
               <ul class="nav nav-main">
-                <li>
+                <!-- <li>
                   <a href="index.html">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Dashboard</span>
                   </a>
-                </li>
+                </li> -->
                 <li>
-                  <a href="mailbox-folder.html">
-                    <span class="pull-right label label-primary">182</span>
+                  <a href="mailboxfile.html">
+                    <span class="pull-right label label-primary"></span>
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span>Mailbox</span>
                   </a>
@@ -295,7 +295,7 @@
                     <span>Pages</span>
                   </a>
                   <ul class="nav nav-children">
-                    <li>
+                    <!-- <li>
                       <a href="pages-signup.html">
                         Sign Up
                       </a>
@@ -314,13 +314,13 @@
                       <a href="pages-lock-screen.html">
                         Locked Screen
                       </a>
-                    </li>
+                    </li> -->
                     <li class="nav-active">
                       <a href="pages-user-profile.html">
                         User Profile
                       </a>
                     </li>
-                    <li>
+                    <!-- <li>
                       <a href="pages-session-timeout.html">
                         Session Timeout
                       </a>
@@ -369,10 +369,10 @@
                       <a href="pages-search-results.html">
                         Search Results
                       </a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
-                <li class="nav-parent">
+                <!-- <li class="nav-parent">
                   <a>
                     <i class="fa fa-tasks" aria-hidden="true"></i>
                     <span>UI Elements</span>
@@ -582,8 +582,8 @@
                         Vector
                       </a>
                     </li>
-                  </ul>
-                </li>
+                  </ul> -->
+                <!-- </li>
                 <li class="nav-parent">
                   <a>
                     <i class="fa fa-columns" aria-hidden="true"></i>
@@ -644,19 +644,19 @@
                       </ul>
                     </li>
                   </ul>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                   <a href="https://themeforest.net/item/porto-responsive-html5-template/4106987?ref=Okler"
                     target="_blank">
                     <i class="fa fa-external-link" aria-hidden="true"></i>
                     <span>Front-End
                       <em class="not-included">(Not Included)</em></span>
                   </a>
-                </li>
+                </li> -->
               </ul>
             </nav>
             <hr class="separator" />
-            <div class="sidebar-widget widget-tasks">
+            <!-- <div class="sidebar-widget widget-tasks">
               <div class="widget-header">
                 <h6>Projects</h6>
                 <div class="widget-toggle">+</div>
@@ -668,16 +668,16 @@
                   <li><a href="#">Porto Admin</a></li>
                 </ul>
               </div>
-            </div>
+            </div> -->
             <hr class="separator" />
             <div class="sidebar-widget widget-stats">
-              <div class="widget-header">
+              <!-- <div class="widget-header">
                 <h6>Company Stats</h6>
                 <div class="widget-toggle">+</div>
-              </div>
+              </div> -->
               <div class="widget-content">
                 <ul>
-                  <li>
+                  <!-- <li>
                     <span class="stats-title">Stat 1</span>
                     <span class="stats-complete">85%</span>
                     <div class="progress">
@@ -706,7 +706,7 @@
                         <span class="sr-only">2% Complete</span>
                       </div>
                     </div>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>

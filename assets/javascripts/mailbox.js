@@ -50,8 +50,11 @@ function checkmail() {
     var name=users.Nom;
     var Prenom=users.Prenom;
     var div = document.getElementById('divreclam');
+    console.log(text[i].Recstatus);
+    
     if (users.id==text[i].user) {
-    var html= `
+        if (text[i].Recstatus=="Unresolved") {
+            var html= `
    <div class="mailbox-email-header mb-lg">
    <h3 class="mailbox-email-subject m-none text-light">
    
@@ -73,16 +76,84 @@ function checkmail() {
    <div class="panel-body">
    
    <p>${text[i].txt}</p>
- 
+   <i class="fa fa-times"></i>
    </div>
    <div class="panel-footer">
-   <button id="modal-confirm" class="btn btn-primary modal-confirm">Resolu</button>
+   <button id="resolve" class="btn btn-primary modal-confirm" onclick="resolve()">Resolu</button>
   
    </div>
    </div>
    </div>
 </div>
 `
+        } else if (text[i].Recstatus=="resolved") {
+            var html= `
+   <div class="mailbox-email-header mb-lg">
+   <h3 class="mailbox-email-subject m-none text-light">
+   
+   </h3>
+   <p class="mt-lg mb-none text-md" id="name"> From ${name+" "+Prenom}</p>
+   </div>
+   <div class="mailbox-email-container">
+   <div class="mailbox-email-screen">
+   <div class="panel">
+   <div class="panel-heading">
+   <div class="panel-actions">
+   <a href="#" class="fa fa-caret-down"></a>
+   <a href="#" class="fa fa-mail-reply"></a>
+   <a href="#" class="fa fa-mail-reply-all"></a>
+   <a href="#" class="fa fa-star-o"></a>
+    </div>
+   <p class="panel-title" id="">${name+" "+Prenom} <i class="fa fa-angle-right fa-fw"></i> You</p>
+   </div>
+   <div class="panel-body">
+   
+   <p>${text[i].txt}</p>
+   <i class="fa fa-check-square"></i>
+   </div>
+   <div class="panel-footer">
+   <button id="resolve" class="btn btn-primary modal-confirm" onclick="resolve()">Resolu</button>
+  
+   </div>
+   </div>
+   </div>
+</div>
+`
+        }
+    
     div.innerHTML+=html;
 }
+}
+
+function resolve() {
+    // var id_user = JSON.parse(localStorage.getItem("user")).id;
+    var rec = JSON.parse(localStorage.getItem("reclamations")) || [];
+    var reclams = JSON.parse(localStorage.getItem("reclamations")) || [];
+    var current_reclam=JSON.parse(localStorage.getItem('current-reclam')) || "";
+    let s = reclams.find(w => w.id == current_reclam);
+    let i = reclams.indexOf(s)
+   
+    s.Recstatus="resolved"
+    rec[i]=s;
+    localStorage.setItem('reclamations', JSON.stringify(rec));
+   
+   
+   
+  
+    // for (let i = 0; i < rec.length; i++) {
+    //     if (id_user==rec[i].user) {
+    //         console.log(id_user);
+           
+    //         var res = {
+    //            id:id_user,
+    //            Recstatus:resolved,
+    
+    //         }
+    //         resolu.push(res);
+    //         localStorage.setItem('resolu', JSON.stringify(res));
+            
+    //     }
+        
+    // }
+    
 }
