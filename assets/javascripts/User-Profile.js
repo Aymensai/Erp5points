@@ -132,3 +132,4 @@ function loadFile () {
     localStorage.setItem("connecteduser", JSON.stringify(connecteduser));
     window.location.reload();
   }
+
