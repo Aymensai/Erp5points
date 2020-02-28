@@ -117,25 +117,6 @@ role.forEach(el => {
 });
 
 let list_edit = document.querySelector(".employee_view");
-// let modalHeaderColorPrimary = document.querySelector("#modalHeaderColorPrimary");
-// let mod = document.getElementsByClassName("modal_view");
-// let empl_view_gen_refresh = empl => {
-//     return row = `
-//         <tr >
-//             <td>${empl.id}</td>
-//             <td class="text-semibold text-dark">
-//                 ${empl.username}
-//             </td>
-           
-//             <td  class="text-center">
-//                 <div id="${empl.id}">
-//                   <i class="fa fa-trash-o trash btn modal-basic" onclick="getUser(${empl.id})" href="#modalHeaderColorPrimary"></i>
-//                   <i class="fa fa-eye view"></i>
-//                 </div>
-//             </td>
-//         </tr>
-//         `;
-//   };
 let empl_view_gen = empl => {
   let row = `
       <tr >
@@ -164,100 +145,52 @@ let affi = document.querySelectorAll(".view");
 let confirm = document.querySelector("#modal-confirm");
 let cancel = document.querySelector("#modal-cancel");
 
-let r = 0;
-// function deleteUser() {
-//     const u = user.map(us => {return us.id}).indexOf(idUserTodelete);
-//     user.splice(u,1);
-//     localStorage.setItem("user", JSON.stringify(user));
-//     // let html = '';
-//     // user.forEach(users => {
-//     //     html += empl_view_gen_refresh(users);
-//     //   });
-//       var el = document.getElementById(idUserTodelete);
-//       el.parentElement.parentElement.innerHTML = "";
-//       console.log(el.parentElement.parentElement);
-     
-//     //   list_edit.innerHTML = html;
-
-//     //   window.location.reload();
-//     //   var edit = document.getElementById("edit");
-//     //   edit.className += " active";
-// }
-// function getUser (id) {
-//     idUserTodelete = id
-   
-// }
- 
-for (let i = 0; i < del.length; i++) {
-  del[i].addEventListener("click", e => {
-    e.preventDefault();
-    let id = e.target.parentElement.id;
-    //console.log(e.target.parentElement.id);
-    var u = user.find(us => us.id == id)
-    console.log(u);
+  list_edit.addEventListener("click", e => {
+    let temp_del= [];
+    let id = 0;
+    if (e.target.classList.contains("trash")){
+      
+      id = e.target.parentElement.id;
+    }
+    // console.log(id);
+    var u = user.find(us => us.id == id);
+    let tr = e.target.parentElement.parentElement.parentElement.rowIndex;
+    console.log(e.target.classList.contains("trash"));
+    temp_del.push(u);
+    temp_del.push(tr);
+    // console.log(tr);
+    // console.log(temp_del);
+    localStorage.setItem("temp_del", JSON.stringify(temp_del));
     
-    if (u) {
-            confirm.addEventListener("click", () => {
-                  let n = user.filter(w=> w.id != id);
-                  user = n;
-                  console.log(n);
-                  
-                  e.target.parentElement.parentElement.parentElement.remove();
-                  localStorage.setItem("user", JSON.stringify(user));
-                  new PNotify({
-                      title: 'Success!',
-                      text: 'Employee Removed.',
-                      type: 'success'
-  
-                  });
-                  
-                });
-            cancel.addEventListener("click",function(){
-                i = 0;
-                console.log(i);
-            });
-            };
-            r++;
-            console.log(r);
-            console.log(i);
+  });
+    
+    let temp_del =  JSON.parse(localStorage.getItem("temp_del"));
+    
+    setInterval(() => {
+      
+      temp_del =  JSON.parse(localStorage.getItem("temp_del"));
+      
+    }, 500);
+    if (temp_del[0]) {
+      confirm.addEventListener("click", el => {
+        // el.preventDefault;
+        let n = user.filter(w=> w.id != temp_del[0].id);
+        user = n;
+        let i = temp_del[1] - 1;
+        // console.log(temp_del);
+        
+        // console.log(n);
+        
+        list_edit.children[i].remove();
+        // console.log(list_edit.children[i]);
+        
+        localStorage.setItem("user", JSON.stringify(user));
+        new PNotify({
+          title: 'Success!',
+          text: 'Employee Removed.',
+          type: 'success'
+          
         });
-        console.log(i);
-};
-
-//                 r++;
-//                 let del = document.querySelectorAll(".trash");
-// del = document.querySelectorAll(".trash");
-
-//                 console.log(r);
-               
-//             });
-//             cancel.addEventListener("click", () => {
-//                 del = document.querySelectorAll(".trash");
-
-//                 r = 0;
-//                 console.log(r);
-               
-//             });
-
-//         // });
-//     }  
-//   });
-// });
-
-// (function( $ ) {
-//     $(document).on('click', '.modal-dismiss', function (e) {
-// e.preventDefault();
-// $.magnificPopup.close();
-// });
-
-// $(document).on('click', '.modal-confirm', function (e) {
-//     e.preventDefault();
-//     $.magnificPopup.close();
-
-//     new PNotify({
-//         title: 'Success!',
-//         text: 'Employee Removed.',
-//         type: 'success'
-//     });
-// });
-// });
+        
+      });
+    };
