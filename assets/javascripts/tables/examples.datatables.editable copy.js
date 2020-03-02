@@ -171,6 +171,17 @@
 
 			data = this.datatable.row( $row.get(0) ).data();
 
+			let empl = document.querySelector("#employ");
+			let user = JSON.parse(localStorage.getItem("user"));
+
+			let gen_emp = sel => {
+				if (sel.role == "Employee" && !sel.team_id) {
+				let sv = document.createElement("option");
+				sv.text = sel.username;
+				empl.add(sv);
+				}
+			};
+
 			$row.children( 'td' ).each(function( i ) {
 				var $this = $( this );
 				
@@ -182,8 +193,11 @@
 					_self.rowSetActionsEditing( $row );
 					
 				}
-				 else if(!(this.classList[0]=="idteam")) {
-					$this.html( '<input type="text" class="form-control input-block" value="' + data[i] + '"/>' );
+				 else if(!(this.classList[0]=="idteam") && !(this.classList[0]=="roleU")) {
+					 user.forEach(e=>{
+						 gen_emp(e);
+						});
+						$this.html( '<select id="employ"></select>' );
 				}
 			});
 		},
