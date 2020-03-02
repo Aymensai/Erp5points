@@ -32,7 +32,7 @@
     <script src="assets/vendor/modernizr/modernizr.js"></script>
 </head>
 
-<body id="body"  >
+<body id="body"  onload="profilee(); loadimg ()">
     <section class="body">
         <header class="header">
             <div class="logo-container">
@@ -239,11 +239,11 @@
                                 <div id="userbox" class="userbox">
                                     <a href="#" data-toggle="dropdown">
                                         <figure class="profile-picture">
-                                            <img src="assets/images/%21logged-user.jpg"  alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/%21logged-user.jpg" />
+                                            <img src="assets/images/%21logged-user.jpg" id="im" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/%21logged-user.jpg" />
                                         </figure>
                                         <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-                                            <span class="name" ></span>
-                                            <span class="role" ></span>
+                                            <span class="name" id="sname"></span>
+                                            <span class="role" id="sPoste"></span>
                                         </div>
                                         <i class="fa custom-caret"></i>
                                     </a>
@@ -323,8 +323,8 @@
                                                 </a>
                                               </li>
                                               <li>
-                                                <a href="pages-calendar.html">
-                                                 Team Management
+                                                <a href="team_management.html">
+                                                    Team Management
                                                 </a>
                                               </li>
                                             </ul>
@@ -503,16 +503,16 @@
             </a>
                     <div class="sidebar-right-wrapper">
                         <div class="sidebar-widget widget-calendar">
-                            <h6>Upcoming Tasks</h6>
+                            <!-- <h6>Upcoming Tasks</h6> -->
                             <div data-plugin-datepicker data-plugin-skin="dark"></div>
                             <ul>
-                                <li>
+                                <!-- <li>
                                     <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
                                     <span>Company Meeting</span>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
-                        <div class="sidebar-widget widget-friends">
+                        <!-- <div class="sidebar-widget widget-friends">
                             <h6>Friends</h6>
                             <ul>
                                 <li class="status-online">
@@ -552,7 +552,7 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

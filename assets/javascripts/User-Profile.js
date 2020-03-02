@@ -151,3 +151,17 @@ function con_user() {
   document.getElementById('Pname').innerHTML=name+" "+Prenom;
   document.getElementById('Pposte').innerHTML=s.Poste; 
 }
+function profilee() {
+  var user=JSON.parse(localStorage.getItem('connecteduser')) || "";
+  var name=user.Nom;
+  var Prenom=user.Prenom;
+
+  document.getElementById('sname').innerHTML=name+" "+Prenom; 
+  document.getElementById('sPoste').innerHTML=user.Poste; 
+}
+function loadimg () {
+  var img=JSON.parse(localStorage.getItem('connecteduser')).img;
+  
+  document.getElementById('im').src = img; 
+
+};
