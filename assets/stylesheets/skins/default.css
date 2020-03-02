@@ -286,9 +286,7 @@ ul.nav-main > li.nav-active > a {
 ul.nav-main > li.nav-active > i {
   color: #08c;
 }
-ul.nav-main li .nav-children li.nav-active > a {
-  color: #08c;
-}
+
 html.no-overflowscrolling .nano > .nano-pane > .nano-slider {
   background: #08c;
 }

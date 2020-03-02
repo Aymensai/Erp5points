@@ -31,14 +31,14 @@
 
 <script src="assets/vendor/modernizr/modernizr.js" ></script>
 </head>
-<body>
+<body onload="profilee(); loadimg ()">
 <section class="body">
 
 <header class="header">
 <div class="logo-container">
-<a href="https://colorlib.com/polygon/" class="logo">
+<!-- <a href="https://colorlib.com/polygon/" class="logo">
 <img src="assets/images/logo.png" height="35" alt="Porto Admin" />
-</a>
+</a> -->
 <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
 <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 </div>
@@ -53,8 +53,8 @@
 </span>
 </div>
 </form>
-<span class="separator"></span>
-<ul class="notifications">
+<!-- <span class="separator"></span> -->
+<!-- <ul class="notifications">
 <li>
 <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
 <i class="fa fa-tasks"></i>
@@ -201,16 +201,16 @@ Alerts
 </div>
 </div>
 </li>
-</ul>
+</ul> -->
 <span class="separator"></span>
 <div id="userbox" class="userbox">
 <a href="#" data-toggle="dropdown">
 <figure class="profile-picture">
-<img src="assets/images/%21logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/%21logged-user.jpg" />
+<img src="assets/images/%21logged-user.jpg" alt="Joseph Doe" id="im" class="img-circle" data-lock-picture="assets/images/%21logged-user.jpg" />
 </figure>
 <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-<span class="name">John Doe Junior</span>
-<span class="role">administrator</span>
+  <span class="name" id="sname"></span>
+  <span class="role" id="sPoste"></span>
 </div>
 <i class="fa custom-caret"></i>
 </a>
@@ -233,11 +233,11 @@ Alerts
 
 </header>
 
-<div class="inner-wrapper">
+<!-- <div class="inner-wrapper">
 
-<aside id="sidebar-left" class="sidebar-left">
-<div class="sidebar-header">
-<div class="sidebar-title">
+<aside id="sidebar-left" class="sidebar-left"> -->
+<!-- <div class="sidebar-header"> -->
+<!-- <div class="sidebar-title">
 Navigation
 </div>
 <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
@@ -678,12 +678,88 @@ Scroll
 </div>
 </div>
 </div>
-</div>
-</aside>
+</div> -->
+<!-- </aside> -->
+<div class="inner-wrapper">
+  <aside id="sidebar-left" class="sidebar-left">
+    <div class="sidebar-header">
+      <div class="sidebar-title">
+        Navigation
+      </div>
+      <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html"
+        data-fire-event="sidebar-left-toggle">
+        <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+      </div>
+    </div>
+    <div class="nano">
+      <div class="nano-content">
+        <nav id="menu" class="nav-main" role="navigation">
+          <ul class="nav nav-main">
+            <li>
+              <a >
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailboxfile.html">
+                <span class="pull-right label label-primary"></span>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>E-Mail</span>
+              </a>
+            </li>
+            <li class="nav-parent nav-expanded nav-active">
+              <a>
+                <i class="fa fa-copy" aria-hidden="true"></i>
+                <span>Pages</span>
+              </a>
+              <ul class="nav nav-children">
+                
+                <li class="nav-active">
+                  <a href="User-Profile.html">
+                    Votre Profile
+                  </a>
+                </li>
+                <li>
+                  <a href="pages-user_validation.html">
+                    Users Management
+                  </a>
+                </li>
+                <li>
+                  <a href="team_management.html">
+                   Team Management
+                  </a>
+                </li>
+                <li>
+                  <a href="stock_management.html">
+                   Stock Management
+                  </a>
+                </li>
+                
+               
+              </ul>
+            </li>
+        
+          </ul>
+        </nav>
+        <hr class="separator" />
+       
+        <hr class="separator" />
+        <div class="sidebar-widget widget-stats">
+       
+          <div class="widget-content">
+            <ul>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
 
 <section role="main" class="content-body">
 <header class="page-header">
-<h2>Editable Tables</h2>
+<h2>Stock Management</h2>
 <div class="right-wrapper pull-right">
 <ol class="breadcrumbs">
 <li>
@@ -691,8 +767,8 @@ Scroll
 <i class="fa fa-home"></i>
 </a>
 </li>
-<li><span>Tables</span></li>
-<li><span>Editable</span></li>
+<li><span>Pages</span></li>
+<li><span>Stock Management</span></li>
 </ol>
 <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
 </div>
@@ -822,19 +898,28 @@ Collapse <i class="fa fa-chevron-right"></i>
 </a>
 <div class="sidebar-right-wrapper">
 <div class="sidebar-widget widget-calendar">
-<h6>Upcoming Tasks</h6>
+<!-- <h6>Upcoming Tasks</h6> -->
 <div data-plugin-datepicker data-plugin-skin="dark"></div>
 <ul>
-<li>
+<!-- <li>
 <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
 <span>Company Meeting</span>
-</li>
+</li> -->
 </ul>
 </div>
 <div class="sidebar-widget widget-friends">
-<h6>Friends</h6>
+<!-- <h6>Friends</h6> -->
 <ul>
-<li class="status-online">
+<!-- <li class="status-online">
+<figure class="profile-picture">
+<img src="assets/images/%21sample-user.jpg" alt="Joseph Doe" class="img-circle">
+</figure> -->
+<!-- <div class="profile-info">
+<span class="name">Joseph Doe Junior</span>
+<span class="title">Hey, how are you?</span>
+</div> -->
+</li>
+<!-- <li class="status-online">
 <figure class="profile-picture">
 <img src="assets/images/%21sample-user.jpg" alt="Joseph Doe" class="img-circle">
 </figure>
@@ -842,8 +927,8 @@ Collapse <i class="fa fa-chevron-right"></i>
 <span class="name">Joseph Doe Junior</span>
 <span class="title">Hey, how are you?</span>
 </div>
-</li>
-<li class="status-online">
+</li> -->
+<!-- <li class="status-offline">
 <figure class="profile-picture">
 <img src="assets/images/%21sample-user.jpg" alt="Joseph Doe" class="img-circle">
 </figure>
@@ -851,8 +936,8 @@ Collapse <i class="fa fa-chevron-right"></i>
 <span class="name">Joseph Doe Junior</span>
 <span class="title">Hey, how are you?</span>
 </div>
-</li>
-<li class="status-offline">
+</li> -->
+<!-- <li class="status-offline">
 <figure class="profile-picture">
 <img src="assets/images/%21sample-user.jpg" alt="Joseph Doe" class="img-circle">
 </figure>
@@ -860,16 +945,7 @@ Collapse <i class="fa fa-chevron-right"></i>
 <span class="name">Joseph Doe Junior</span>
 <span class="title">Hey, how are you?</span>
 </div>
-</li>
-<li class="status-offline">
-<figure class="profile-picture">
-<img src="assets/images/%21sample-user.jpg" alt="Joseph Doe" class="img-circle">
-</figure>
-<div class="profile-info">
-<span class="name">Joseph Doe Junior</span>
-<span class="title">Hey, how are you?</span>
-</div>
-</li>
+</li> -->
 </ul>
 </div>
 </div>
@@ -899,6 +975,7 @@ Collapse <i class="fa fa-chevron-right"></i>
 </footer>
 </section>
 </div>
+<script src="assets/javascripts/User-Profile.js"></script>
 <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
 <script src="stock_management.js"></script>
 <script src="assets/vendor/jquery/jquery.js" ></script>
