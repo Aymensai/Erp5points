@@ -126,7 +126,7 @@ function checkmail() {
 }
 
 function resolve() {
-    // var id_user = JSON.parse(localStorage.getItem("user")).id;
+  
     var rec = JSON.parse(localStorage.getItem("reclamations")) || [];
     var reclams = JSON.parse(localStorage.getItem("reclamations")) || [];
     var current_reclam=JSON.parse(localStorage.getItem('current-reclam')) || "";
@@ -139,21 +139,6 @@ function resolve() {
    
    
    
-  
-    // for (let i = 0; i < rec.length; i++) {
-    //     if (id_user==rec[i].user) {
-    //         console.log(id_user);
-           
-    //         var res = {
-    //            id:id_user,
-    //            Recstatus:resolved,
-    
-    //         }
-    //         resolu.push(res);
-    //         localStorage.setItem('resolu', JSON.stringify(res));
-            
-    //     }
-        
-    // }
+ 
     
 }

@@ -31,14 +31,14 @@
 
 <script src="assets/vendor/modernizr/modernizr.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
 </head>
-<body>
+<body onload="profilee(); loadimg ()">
 <section class="body">
 
 <header class="header">
 <div class="logo-container">
-<a href="https://colorlib.com/polygon/" class="logo">
+<!-- <a href="https://colorlib.com/polygon/" class="logo">
 <img src="assets/images/logo.png" height="35" alt="Porto Admin" />
-</a>
+</a> -->
 <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
 <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 </div>
@@ -53,8 +53,8 @@
 </span>
 </div>
 </form>
-<span class="separator"></span>
-<ul class="notifications">
+<!-- <span class="separator"></span> -->
+<!-- <ul class="notifications">
 <li>
 <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
 <i class="fa fa-tasks"></i>
@@ -201,16 +201,16 @@ Alerts
 </div>
 </div>
 </li>
-</ul>
+</ul> -->
 <span class="separator"></span>
 <div id="userbox" class="userbox">
 <a href="#" data-toggle="dropdown">
 <figure class="profile-picture">
-<img src="assets/images/%21logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/%21logged-user.jpg" />
+<img src="assets/images/%21logged-user.jpg" id="im" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/%21logged-user.jpg" />
 </figure>
 <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-<span class="name">John Doe Junior</span>
-<span class="role">administrator</span>
+  <span class="name" id="sname"></span>
+  <span class="role" id="sPoste"></span>
 </div>
 <i class="fa custom-caret"></i>
 </a>
@@ -218,11 +218,11 @@ Alerts
 <ul class="list-unstyled">
 <li class="divider"></li>
 <li>
-<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+<a role="menuitem" tabindex="-1" href="User-Profile.html"><i class="fa fa-user"></i> My Profile</a>
 </li>
-<li>
+<!-- <li>
 <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
-</li>
+</li> -->
 <li>
 <a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
 </li>
@@ -235,7 +235,72 @@ Alerts
 
 <div class="inner-wrapper">
 
-<aside id="sidebar-left" class="sidebar-left">
+ 
+    <aside id="sidebar-left" class="sidebar-left">
+      <div class="sidebar-header">
+        <div class="sidebar-title">
+           Navigation
+        </div>
+        <div
+          class="sidebar-toggle hidden-xs"
+          data-toggle-class="sidebar-left-collapsed"
+          data-target="html"
+          data-fire-event="sidebar-left-toggle"
+        >
+          <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+        </div>
+      </div>
+      <div class="nano">
+        <div class="nano-content">
+          <nav id="menu" class="nav-main" role="navigation">
+            <ul class="nav nav-main">
+              <li>
+                <a href="index.html">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                  <span>Dashboard</span>
+                </a>
+                                        </li>
+                                        <li>
+                                            <a href="mailboxfile.html">
+                                                <span class="pull-right label label-primary"></span>
+                                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                <span>E-Mail</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-parent nav-expanded nav-active">
+                                            <a>
+                                              <i class="fa fa-copy" aria-hidden="true"></i>
+                                              <span>Pages</span>
+                                            </a>
+                                            <ul class="nav nav-children">
+                                        <li class="nav-active">
+                                            <a href="User-Profile.html">
+                                              Votre Profile
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="pages-user_validation.html">
+                                              Users Management
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="team_edit.html">
+                                                Team Management
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="stock_management.html">
+                                             Stock Management
+                                            </a>
+                                          </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                          </div>
+                        </div>
+    </aside>
+<!-- <aside id="sidebar-left" class="sidebar-left">
 <div class="sidebar-header">
 <div class="sidebar-title">
 Navigation
@@ -678,8 +743,8 @@ Scroll
 </div>
 </div>
 </div>
-</div>
-</aside>
+</div> 
+</aside>-->
 
 <section role="main" class="content-body">
 <header class="page-header">
@@ -1414,18 +1479,18 @@ Explorer 6
 </section>
 </div>
 <aside id="sidebar-right" class="sidebar-right">
-<div class="nano">
+ <div class="nano">
 <div class="nano-content">
 <a href="#" class="mobile-close visible-xs">
 Collapse <i class="fa fa-chevron-right"></i>
 </a>
 <div class="sidebar-right-wrapper">
 <div class="sidebar-widget widget-calendar">
-<h6>Upcoming Tasks</h6>
+
 <div data-plugin-datepicker data-plugin-skin="dark"></div>
 <ul>
 <li>
-<time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+<!--<time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
 <span>Company Meeting</span>
 </li>
 </ul>
@@ -1469,7 +1534,7 @@ Collapse <i class="fa fa-chevron-right"></i>
 <span class="title">Hey, how are you?</span>
 </div>
 </li>
-</ul>
+</ul> -->
 </div>
 </div>
 </div>
@@ -1498,6 +1563,8 @@ Collapse <i class="fa fa-chevron-right"></i>
 </footer>
 </section>
 </div>
+
+<script src="assets/javascripts/User-Profile.js"></script>
 <script src="team_edit.js"></script>
 <script src="assets/vendor/jquery/jquery.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
 <script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>

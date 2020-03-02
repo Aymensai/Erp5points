@@ -250,10 +250,10 @@
                                 <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i
                                         class="fa fa-user"></i> My Profile</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i
                                         class="fa fa-lock"></i> Lock Screen</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a role="menuitem" tabindex="-1" href="pages-signin.html"><i
                                         class="fa fa-power-off"></i> Logout</a>
@@ -269,6 +269,68 @@
 
             <aside id="sidebar-left" class="sidebar-left">
                 <div class="sidebar-header">
+                    <div class="sidebar-title">
+                       Navigation
+                    </div>
+                    <div
+                      class="sidebar-toggle hidden-xs"
+                      data-toggle-class="sidebar-left-collapsed"
+                      data-target="html"
+                      data-fire-event="sidebar-left-toggle"
+                    >
+                      <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                    </div>
+                  </div>
+                  <div class="nano">
+                    <div class="nano-content">
+                      <nav id="menu" class="nav-main" role="navigation">
+                        <ul class="nav nav-main">
+                          <li>
+                            <a href="index.html">
+                              <i class="fa fa-home" aria-hidden="true"></i>
+                              <span>Dashboard</span>
+                            </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="mailboxfile.html">
+                                                            <span class="pull-right label label-primary"></span>
+                                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                            <span>E-Mail</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-parent nav-expanded nav-active">
+                                                        <a>
+                                                          <i class="fa fa-copy" aria-hidden="true"></i>
+                                                          <span>Pages</span>
+                                                        </a>
+                                                        <ul class="nav nav-children">
+                                                    <li class="nav-active">
+                                                        <a href="User-Profile.html">
+                                                          Votre Profile
+                                                        </a>
+                                                      </li>
+                                                      <li>
+                                                        <a href="pages-user_validation.html">
+                                                          Users Management
+                                                        </a>
+                                                      </li>
+                                                      <li>
+                                                        <a href="team_edit.html">
+                                                            Team Management
+                                                        </a>
+                                                      </li>
+                                                      <li>
+                                                        <a href="stock_management.html">
+                                                         Stock Management
+                                                        </a>
+                                                      </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                      </div>
+                                    </div>
+                <!-- <div class="sidebar-header">
                     <div class="sidebar-title">
                         Navigation
                     </div>
@@ -718,7 +780,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </aside>
 
             <section role="main" class="content-body">
@@ -765,23 +827,23 @@
                                         </a>
                                         <ul class="list-unstyled mt-xl pt-md">
                                             <li>
-                                                <a href="mailbox-folder.html" class="menu-item active">Inbox <span
-                                                        class="label label-primary text-normal pull-right">43</span></a>
+                                                <a href="mailboxfile.html" class="menu-item active">Inbox <span
+                                                        class="label label-primary text-normal pull-right"></span></a>
                                             </li>
                                             <li>
-                                                <a href="mailbox-folder.html" class="menu-item">Important</a>
+                                                <a href="mailboxfile.html" class="menu-item">Important</a>
                                             </li>
                                             <li>
-                                                <a href="mailbox-folder.html" class="menu-item">Sent</a>
+                                                <a href="mailboxfile.html" class="menu-item">Sent</a>
                                             </li>
                                             <li>
-                                                <a href="mailbox-folder.html" class="menu-item">Drafts</a>
+                                                <a href="mailboxfile.html" class="menu-item">Drafts</a>
                                             </li>
                                             <li>
-                                                <a href="mailbox-folder.html" class="menu-item">Trash</a>
+                                                <a href="mailboxfile.html" class="menu-item">Trash</a>
                                             </li>
                                         </ul>
-                                        <hr class="separator" />
+                                        <!-- <hr class="separator" />
                                         <div class="sidebar-widget m-none">
                                             <div class="widget-header">
                                                 <h6 class="title">Labels</h6>
@@ -840,7 +902,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </menu>
                         <div class="inner-body mailbox-folder">
 
@@ -907,360 +969,7 @@
                                 <div class="nano">
                                     <div class="nano-content">
                                         <ul id="ul-reclam" class="list-unstyled">
-                                            <!-- <li class="unread">
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail1">
-                                                            <label for="mail1"></label>
-                                                        </div>
-                                                        <p class="m-none ib" id="name"></p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject" id="subject"> </span>
-                                                            <span class="mail-partial" id="subjects"></span>
-                                                        </p>
-                                                        <p class="m-none mail-date">11:35 am</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <i class="mail-label" style="border-color: #EA4C89"></i>
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail2">
-                                                            <label for="mail2"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">Check it out.</span>
-                                                        </p>
-                                                        <i class="mail-attachment fa fa-paperclip"></i>
-                                                        <p class="m-none mail-date">3:35 pm</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailbox-email.html">
-                                                    <div class="col-sender">
-                                                        <div class="checkbox-custom checkbox-text-primary ib">
-                                                            <input type="checkbox" id="mail3">
-                                                            <label for="mail3"></label>
-                                                        </div>
-                                                        <p class="m-none ib">Okler Themes</p>
-                                                    </div>
-                                                    <div class="col-mail">
-                                                        <p class="m-none mail-content">
-                                                            <span class="subject">Check out our new Porto Admin theme!
-                                                                &nbsp;–&nbsp;</span>
-                                                            <span class="mail-partial">We are proud to announce that our
-                                                                new theme Porto Admin is ready, wants to know more about
-                                                                it?</span>
-                                                        </p>
-                                                        <p class="m-none mail-date">Jul 03</p>
-                                                    </div>
-                                                </a>
-                                            </li> -->
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -1279,9 +988,9 @@
                     </a>
                     <div class="sidebar-right-wrapper">
                         <div class="sidebar-widget widget-calendar">
-                            <h6>Upcoming Tasks</h6>
+                            <!-- <h6>Upcoming Tasks</h6> -->
                             <div data-plugin-datepicker data-plugin-skin="dark"></div>
-                            <ul>
+                            <!-- <ul>
                                 <li>
                                     <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
                                     <span>Company Meeting</span>
@@ -1327,13 +1036,14 @@
                                         <span class="title">Hey, how are you?</span>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 </div>
             </div>
         </aside>
     </section>
+    
     <script src="assets/javascripts/mailbox.js"></script>
     <script src="assets/vendor/jquery/jquery.js" type="66bafe958216681965c1ede2-text/javascript"></script>
     <script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"
