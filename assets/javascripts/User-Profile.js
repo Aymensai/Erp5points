@@ -132,4 +132,22 @@ function loadFile () {
     localStorage.setItem("connecteduser", JSON.stringify(connecteduser));
     window.location.reload();
   }
-
+ 
+function con_user() {
+ 
+  var cur = JSON.parse(localStorage.getItem("user")) || [];
+  var current_user=JSON.parse(localStorage.getItem('current_user')) || "";
+  let s = cur.find(w => w.id == current_user);  
+  
+  document.getElementById('displayname').innerHTML=s.Nom;
+  document.getElementById('mail').innerHTML=s.email;
+  document.getElementById('displayprenom').innerHTML=s.Prenom;
+  document.getElementById('Poccupe').innerHTML=s.Poste;
+  document.getElementById('adresse').innerHTML=s.Adresse;
+  document.getElementById('Numero').innerHTML=s.Tel;
+  document.getElementById('image').src = s.img;
+  var name=s.Nom;
+  var Prenom=s.Prenom;
+  document.getElementById('Pname').innerHTML=name+" "+Prenom;
+  document.getElementById('Pposte').innerHTML=s.Poste; 
+}

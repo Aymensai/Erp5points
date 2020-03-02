@@ -19,6 +19,7 @@ let empl_gen = empl => {
             <div class="d-flex justify-content-end" id="${empl.id}">
             <button type="button" class="mb-xs mt-xs mr-xs btn btn-success">Validate</button>
             <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger">Refuse</button>
+            
             </div>
         </td>
     </tr>
