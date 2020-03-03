@@ -2,6 +2,7 @@ let stock_list = document.querySelector("#stock_list");
 let add_row = document.querySelector("#add_row");
 let stocks = JSON.parse(localStorage.getItem("stocks"));
 let category = document.querySelector("#category");
+let confirm = document.querySelector("#dialogConfirm");
 
 let now = new Date();
 
@@ -21,7 +22,9 @@ let gen_stock = s => {
         <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
         <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
         <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-        <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+        <a href="#" id="${
+          s.prod_id
+        }" class="on-default remove-row"><i class="fa fa-trash-o trash"></i></a>
         <a href="javascript:myPopup('figure.html', 'team','700','600','500','50')" class="on-default view"><i class="fa fa-eye view"></i></a>
         </td>
     </tr>
@@ -33,19 +36,29 @@ let newCat = document.querySelector(".new-cat");
 let addNewCat = document.querySelector("#addNewCat");
 // let pName = document.querySelector(".prod-name");
 
-stock_list.addEventListener("click", e=>{
-    if(e.target.classList.contains("view")){
-        let id = e.target.parentElement.parentElement.parentElement.children[0].innerText;
-        let currP = stocks.find(w=>w.prod_id == id);
-        localStorage.setItem("currP", JSON.stringify(currP));
-        
-        
-    }
-    
-})
+stock_list.addEventListener("click", e => {
+  if (e.target.classList.contains("view")) {
+    let id =
+      e.target.parentElement.parentElement.parentElement.children[0].innerText;
+    let currP = stocks.find(w => w.prod_id == id);
+    localStorage.setItem("currP", JSON.stringify(currP));
+  }
+});
 
-function myPopup(url,windowname,w,h,x,y){
-    window.open(url,windowname,"resizable=no,toolbar=no,scrollbars=no,menubar=no,status=no,directories=n o,width="+w+",height="+h+",left="+x+",top="+y+"");    
+function myPopup(url, windowname, w, h, x, y) {
+  window.open(
+    url,
+    windowname,
+    "resizable=no,toolbar=no,scrollbars=no,menubar=no,status=no,directories=n o,width=" +
+      w +
+      ",height=" +
+      h +
+      ",left=" +
+      x +
+      ",top=" +
+      y +
+      ""
+  );
 }
 
 let st = {
@@ -100,7 +113,7 @@ addToStock.addEventListener("click", () => {
     st.prod_id = newId;
     st.prod_cat = category.options[category.selectedIndex].text;
     st.prod_init_qt = newQt.value;
-    
+
     let be = new Date(new Date());
     st.prod_time = be;
     console.log(st);
@@ -142,4 +155,78 @@ let stockHist = JSON.parse(localStorage.getItem("stockHist"));
 
 stockHist.forEach(stock => {
   gen_st_hist(stock);
+});
+
+stock_list.addEventListener("click", e => {
+  let temp_del = [];
+  let id = 0;
+  console.log(e.target);
+
+  if (e.target.classList.contains("trash")) {
+    id = e.target.parentElement.id;
+  }
+  // console.log(id);
+  var u = stocks.find(us => us.prod_id == id);
+  let tr = e.target.parentElement.parentElement.parentElement.rowIndex;
+  console.log(e.target.parentElement.id);
+  temp_del.push(u);
+  temp_del.push(tr);
+  // console.log(tr);
+  // console.log(temp_del);
+  localStorage.setItem("temp_del_st", JSON.stringify(temp_del));
+});
+
+let temp_del = JSON.parse(localStorage.getItem("temp_del_st"));
+
+setInterval(() => {
+  temp_del = JSON.parse(localStorage.getItem("temp_del_st"));
+}, 500);
+// console.log(temp_del);
+
+if (temp_del[0]) {
+  confirm.addEventListener("click", el => {
+    // el.preventDefault;
+    let n = stocks.filter(w => w.prod_id != temp_del[0].prod_id);
+    stocks = n;
+    let i = temp_del[1] - 1;
+    // console.log(temp_del);
+
+    // console.log(n);
+
+    let nstockHist = stockHist.filter(w => w.prod_id != temp_del[0].prod_id);
+    stockHist = nstockHist;
+
+    stock_list.children[i].remove();
+    // console.log(stock_list.children[i]);
+
+    localStorage.setItem("stocks", JSON.stringify(stocks));
+    localStorage.setItem("stockHist", JSON.stringify(stockHist));
+    // new PNotify({
+    //   title: 'Success!',
+    //   text: 'Product Removed.',
+    //   type: 'success'
+
+    // });
+  });
+}
+let search = document.querySelector(".data_filter input");
+let searchTable = term => {
+  let tr = stock_hist.getElementsByTagName("tr");
+  let filter = search.value.toUpperCase();
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+};
+
+search.addEventListener("keyup", () => {
+  const term = search.value.trim();
+  searchTable(term);
 });

@@ -39,10 +39,10 @@ let gen_lead = sel => {
   let gen_chpis_sup = el => {
     if (el) {
       let chip = `
-          <div class="chip">
+          <span class="chip">
           ${el.username}
           <span class="closebtn btn" onclick="this.parentElement.style.display='none'">&times;</span>
-          </div>
+          </span>
           `;
       chips_lead.innerHTML += chip;
     } else {
@@ -52,10 +52,10 @@ let gen_lead = sel => {
   let gen_chpis_empl = el => {
     if (el) {
       let chip = `
-          <div class="chip">
+          <span class="chip">
           ${el.username}
           <span class="closebtn btn" onclick="this.parentElement.style.display='none'">&times;</span>
-          </div>
+          </span>
           `;
       chips_employee.innerHTML += chip;
     } else {

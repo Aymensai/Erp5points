@@ -27,7 +27,9 @@ let empl_gen = empl => {
   list.innerHTML += row;
 };
 user.forEach(users => {
-  empl_gen(users);
+  if (users.role != "admin"){
+    empl_gen(users);
+  }
 });
 let role = document.querySelectorAll(".roleUser");
 
@@ -138,7 +140,9 @@ let empl_view_gen = empl => {
 };
 
 user.forEach(users => {
+  if (users.role != "admin"){
   empl_view_gen(users);
+  }
 });
 var idUserTodelete = null;
 let del = document.querySelectorAll(".trash");
@@ -166,7 +170,7 @@ let cancel = document.querySelector("#modal-cancel");
     if (e.target.classList.contains("view")){
       id = e.target.parentElement.parentElement.id;
       let conUser = user.find(us => us.id == id);
-      localStorage.setItem("userId", JSON.stringify(conUser));
+      localStorage.setItem("connecteduser", JSON.stringify(conUser));
     }
     
   });

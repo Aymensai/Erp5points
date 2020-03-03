@@ -29,7 +29,7 @@
 
 <link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
 
-<script src="assets/vendor/modernizr/modernizr.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
+<script src="assets/vendor/modernizr/modernizr.js" ></script>
 </head>
 <body onload="profilee(); loadimg ()">
 <section class="body">
@@ -238,7 +238,7 @@ Alerts
  
     <aside id="sidebar-left" class="sidebar-left">
       <div class="sidebar-header">
-        <div class="sidebar-title">
+        <div class="sidebar-title" style="color: black;">
            Navigation
         </div>
         <div
@@ -260,7 +260,7 @@ Alerts
                   <span>Dashboard</span>
                 </a>
                                         </li>
-                                        <li>
+                                        <li class="emp">
                                             <a href="mailboxfile.html">
                                                 <span class="pull-right label label-primary"></span>
                                                 <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -278,14 +278,14 @@ Alerts
                                               Votre Profile
                                             </a>
                                           </li>
-                                          <li>
+                                          <li class="emp sup">
                                             <a href="pages-user_validation.html">
                                               User Management
                                             </a>
                                           </li>
                                         </ul>
                                         </li>
-                                          <li class="nav-parent nav-expanded nav-active">
+                                          <li class="nav-parent nav-expanded nav-active emp sup">
                                             <a>
                                               <i class="fa fa-copy" aria-hidden="true"></i>
                                               <span>Teams</span>
@@ -298,7 +298,7 @@ Alerts
                                           </li>
                                         </ul>
                                         </li>
-                                        <li class="nav-parent nav">
+                                        <li class="nav-parent nav emp">
                                             <a>
                                               <i class="fa fa-copy" aria-hidden="true"></i>
                                               <span>Stock</span>
@@ -787,22 +787,30 @@ Scroll
     <a href="#" class="fa fa-caret-down"></a>
     <a href="#" class="fa fa-times"></a>
     </div>
-    <h2 class="panel-title">Default</h2>
+    <h2 class="panel-title">Add Members</h2>
   </header>
   <div class="panel-body">
     <div class="row">
       <div id="select_team">
-        <div>
-        <select  id="team_lead">
-          <option value=""></option>
-        </select>
-        <span id="chips_lead"></span>
+        <div class="col-md-12 p-0 pb-2">
+          <div class="col-md-2 p-0">
+            <select id="team_lead" style="width: 100%;">
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="col-md-10">
+            <span id="chips_lead"></span>
+          </div>
       </div>
-    <div>
-        <select id="employee">
+    <div class="col-md-12 p-0 pb-2">
+      <div class="col-md-2 p-0">
+        <select id="employee"  style="width: 100%;">
           <option value=""></option>
         </select>
+      </div>
+      <div class="col-md-10">
         <span id="chips_employee"></span>
+      </div>
       </div>
       </div>
       <form id="team-name">
@@ -828,7 +836,7 @@ Scroll
 <a href="#" class="fa fa-caret-down"></a>
 <a href="#" class="fa fa-times"></a>
 </div>
-<h2 class="panel-title">Default</h2>
+<h2 class="panel-title">Teams List</h2>
 </header>
 <div class="panel-body">
 <div class="row">
@@ -1584,35 +1592,37 @@ Collapse <i class="fa fa-chevron-right"></i>
 
 <script src="assets/javascripts/User-Profile.js"></script>
 <script src="team_edit.js"></script>
-<script src="assets/vendor/jquery/jquery.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script src="assets/vendor/nanoscroller/nanoscroller.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script src="assets/vendor/magnific-popup/magnific-popup.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
+<script src="assets/vendor/jquery/jquery.js" ></script>
+<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js" ></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.js" ></script>
+<script src="assets/vendor/nanoscroller/nanoscroller.js" ></script>
+<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js" ></script>
+<script src="assets/vendor/magnific-popup/magnific-popup.js" ></script>
+<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js" ></script>
 
-<script src="assets/vendor/select2/select2.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script src="assets/vendor/jquery-datatables-bs3/assets/js/datatables.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script src="assets/javascripts/tables/examples.datatables.editable.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
+<script src="assets/vendor/select2/select2.js" ></script>
+<script src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js" ></script>
+<script src="assets/vendor/jquery-datatables-bs3/assets/js/datatables.js" ></script>
+<script src="assets/javascripts/tables/examples.datatables.editable.js" ></script>
 
-<script src="assets/javascripts/theme.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
+<script src="assets/javascripts/theme.js" ></script>
 
-<script src="assets/javascripts/theme.custom.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
+<script src="assets/javascripts/theme.custom.js" ></script>
 
-<script src="assets/javascripts/theme.init.js" type="66c8d2d1980376bff10b94de-text/javascript"></script>
+<script src="assets/javascripts/theme.init.js" ></script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="66c8d2d1980376bff10b94de-text/javascript"></script>
-<script type="66c8d2d1980376bff10b94de-text/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" ></script>
+<script >
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
 </script>
-<script src="ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="66c8d2d1980376bff10b94de-|49" defer=""></script></body>
+<script src="ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="66c8d2d1980376bff10b94de-|49" defer=""></script>
+<script src="menu.js"></script>
+</body>
 
 <!-- Mirrored from colorlib.com/polygon/octopus/tables-editable.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Feb 2020 10:24:49 GMT -->
 </html>
