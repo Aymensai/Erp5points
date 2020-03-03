@@ -145,7 +145,7 @@ let del = document.querySelectorAll(".trash");
 let affi = document.querySelectorAll(".view");
 let confirm = document.querySelector("#modal-confirm");
 let cancel = document.querySelector("#modal-cancel");
-let conUser = JSON.parse(localStorage.getItem("connecteduser"));
+// let conUser = JSON.parse(localStorage.getItem("connecteduser"));
 
   list_edit.addEventListener("click", e => {
     let temp_del= [];
@@ -166,7 +166,7 @@ let conUser = JSON.parse(localStorage.getItem("connecteduser"));
     if (e.target.classList.contains("view")){
       id = e.target.parentElement.parentElement.id;
       let conUser = user.find(us => us.id == id);
-      localStorage.setItem("connecteduser", JSON.stringify(conUser));
+      localStorage.setItem("userId", JSON.stringify(conUser));
     }
     
   });
