@@ -22,6 +22,7 @@ let gen_stock = s => {
         <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
         <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
         <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+        <a href="javascript:myPopup('figure.html', 'team','700','600','500','50')" class="on-default view"><i class="fa fa-eye view"></i></a>
         </td>
     </tr>
     `;
@@ -33,14 +34,10 @@ let addNewCat = document.querySelector("#addNewCat");
 // let pName = document.querySelector(".prod-name");
 
 stock_list.addEventListener("click", e=>{
-    console.log(e.target.classList.contains("prod-name"));
-    if(e.target.classList.contains("prod-name")){
-        let id = e.target.parentElement.children[0].innerText;
-        let nameTd = e.target.parentElement.children[1];
+    if(e.target.classList.contains("view")){
+        let id = e.target.parentElement.parentElement.parentElement.children[0].innerText;
         let currP = stocks.find(w=>w.prod_id == id);
         localStorage.setItem("currP", JSON.stringify(currP));
-        nameTd.innerHTML += `<a href="javascript:myPopup('figure.html', 'team','700','600','500','50')"></a>`
-        console.log(nameTd);
         
         
     }

@@ -187,19 +187,20 @@
 				} else if(!(this.classList.value.split(' ').includes("not-editable")) && !(this.classList.value.split(' ').includes("category")) ) {
 					$this.html( '<input type="text" class="form-control input-block" value="' + data[i] + '"/>' );
 				}else if((this.classList.value.split(' ').includes("category"))){
-					$this.html( '<select id="categoryEdit"></select>' );
+					$this.html( '<select class="categoryEdit" id="categoryEdit"></select>' );
 					let categ = JSON.parse(localStorage.getItem("category"));
-					let category = document.querySelector("#categoryEdit");
+					let categoryEdit = document.querySelector("#categoryEdit");
 
 					let gen_cat = i => {
 					let cat = document.createElement("option");
 					cat.text = i;
 					cat.value = i;
-					category.add(cat);
+					categoryEdit.add(cat);
 					};
 					categ.forEach(cat =>{
 						gen_cat(cat);
 					});
+					console.log(categoryEdit);
 				}				
 			});
 			
@@ -224,32 +225,36 @@
 					return _self.datatable.cell( this ).data();
 				} else if ($this.hasClass('not-editable')) {
 					return _self.datatable.cell( this ).data();
+				} else if ($this.hasClass('category')) {
+					return $.trim( $this.find('select').val() );
 				} else {
 					return $.trim( $this.find('input').val() );
 				}
 			});
 		
 
+			const categoryEdit = document.querySelector("#categoryEdit");
+			// console.log(categoryEdit);
+			const newCat = $('#categoryEdit :selected').text();
+			// console.log(newCat);
+			const categ = newCat;
+
+			
 			this.datatable.row( $row.get(0) ).data( values );
 			
 			const data = this.datatable.row( $row.get(0) ).data();
-			const cat = $('#categoryEdit').val();
-			const newCat = $('#categoryEdit :selected').text();
-			console.log(cat ,newCat);
 			
 						
 			const id = data[0]
 			const name = data[1]
 			const quantity = data[2]
-			const category = data[3]
-			// console.log(data);
 			
 			// const time = data[4]
 			let stocks = JSON.parse(localStorage.getItem('stocks'));
 			let stock = stocks.find(s=>s.prod_id==id)
 			let now = new Date();
 			
-
+			stock.prod_cat = categ;
 			if(stock.prod_qt != quantity){
 				let diff = Math.abs(stock.prod_qt - quantity);
 				let st = {
@@ -266,7 +271,8 @@
 				};
 				st.prod_id = stock.prod_id
 				st.prod_name = stock.prod_name
-				st.prod_cat = stock.prod_cat
+				st.prod_cat = categ;
+				
 				st.prod_time = dateFns.format(new Date(new Date()), 'DD/MM/YY H:mm')
 				stock.prod_time = new Date(new Date());
 				let stockHist = JSON.parse(localStorage.getItem("stockHist")) || [];
@@ -276,7 +282,8 @@
 
 			stock.prod_name = name;
 			stock.prod_qt = quantity;
-			stock.prod_cat = category;
+			
+			
 			localStorage.setItem('stocks', JSON.stringify(stocks));
 
 			$actions = $row.find('td.actions');

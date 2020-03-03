@@ -129,7 +129,7 @@ let empl_view_gen = empl => {
           <td  class="text-center">
               <div id="${empl.id}">
                 <i class="fa fa-trash-o trash btn modal-basic" href="#modalHeaderColorPrimary"></i>
-                <i class="fa fa-eye view"></i>
+                <a href="javascript:myPopup('user-profile.html', 'team','1100','700','300','50')" class="on-default view"><i class="fa fa-eye view"></i></a>
               </div>
           </td>
       </tr>
@@ -145,6 +145,7 @@ let del = document.querySelectorAll(".trash");
 let affi = document.querySelectorAll(".view");
 let confirm = document.querySelector("#modal-confirm");
 let cancel = document.querySelector("#modal-cancel");
+let conUser = JSON.parse(localStorage.getItem("connecteduser"));
 
   list_edit.addEventListener("click", e => {
     let temp_del= [];
@@ -162,8 +163,16 @@ let cancel = document.querySelector("#modal-cancel");
     // console.log(tr);
     // console.log(temp_del);
     localStorage.setItem("temp_del", JSON.stringify(temp_del));
+    if (e.target.classList.contains("view")){
+      id = e.target.parentElement.parentElement.id;
+      let conUser = user.find(us => us.id == id);
+      localStorage.setItem("connecteduser", JSON.stringify(conUser));
+    }
     
   });
+  function myPopup(url,windowname,w,h,x,y){
+    window.open(url,windowname,"resizable=no,toolbar=no,scrollbars=no,menubar=no,status=no,directories=n o,width="+w+",height="+h+",left="+x+",top="+y+"");    
+}
     
     let temp_del =  JSON.parse(localStorage.getItem("temp_del"));
     
