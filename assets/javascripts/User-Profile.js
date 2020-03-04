@@ -17,7 +17,10 @@ function Uinformation() {
   var Adresse = document.getElementById("Adresse");
   var Tel = document.getElementById("Tel");
   var Poste = document.getElementById("Poste");
+  var image = document.getElementById("image");
   let id = JSON.parse(localStorage.getItem("connecteduser")).id;
+  console.log(image);
+  
   
   let user = users.find(w=>w.id == id);
   let i = users.indexOf(user);
@@ -26,6 +29,7 @@ function Uinformation() {
     user.Adresse = Adresse.value;
     user.Poste = Poste.value;
     user.Tel = Tel.value;
+    user.img = image
     users[i] = user;
     localStorage.setItem("connecteduser", JSON.stringify(user));
     localStorage.setItem("user", JSON.stringify(users));
@@ -70,6 +74,12 @@ function reclam() {
     txt: txt.value
   };
   reclamations.push(objet);
+  for (let i = 1; i < reclamations.length; i++) {
+    if(reclamations[i-1].txt == reclamations[i].txt){
+      reclamations.pop();
+    }
+    
+  }
   localStorage.setItem("reclamations", JSON.stringify(reclamations));
 }
 
