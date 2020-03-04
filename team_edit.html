@@ -35,14 +35,18 @@
 <section class="body">
 
 <header class="header">
-<div class="logo-container">
-<!-- <a href="https://colorlib.com/polygon/" class="logo">
+  <span>
+    <img src="erp-logo-png-5.png" width="80" height="55">
+  </span>
+  <span style="font-size: medium; font-weight: bold; font-family: cursive;">A&A</span>
+<!-- <div class="logo-container">
+<a href="https://colorlib.com/polygon/" class="logo">
 <img src="assets/images/logo.png" height="35" alt="Porto Admin" />
-</a> -->
+</a>
 <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
 <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 </div>
-</div>
+</div> -->
 
 <div class="header-right">
 <form action="https://colorlib.com/polygon/octopus/pages-search-results.html" class="search nav-form">
@@ -254,12 +258,12 @@ Alerts
         <div class="nano-content">
           <nav id="menu" class="nav-main" role="navigation">
             <ul class="nav nav-main">
-              <li>
+              <!-- <li>
                 <a href="index.html">
                   <i class="fa fa-home" aria-hidden="true"></i>
                   <span>Dashboard</span>
                 </a>
-                                        </li>
+                                        </li> -->
                                         <li class="emp">
                                             <a href="mailboxfile.html">
                                                 <span class="pull-right label label-primary"></span>
@@ -795,7 +799,7 @@ Scroll
         <div class="col-md-12 p-0 pb-2">
           <div class="col-md-2 p-0">
             <select id="team_lead" style="width: 100%;">
-              <option value=""></option>
+              <option value="" selected disabled>Team Lead</option>
             </select>
           </div>
           <div class="col-md-10">
@@ -805,7 +809,7 @@ Scroll
     <div class="col-md-12 p-0 pb-2">
       <div class="col-md-2 p-0">
         <select id="employee"  style="width: 100%;">
-          <option value=""></option>
+          <option value="" selected disabled>Employee</option>
         </select>
       </div>
       <div class="col-md-10">
@@ -815,7 +819,7 @@ Scroll
       </div>
       <form id="team-name">
         <div>
-          <input type="text" name="name">
+          <input type="text" name="name" placeholder="Team Name">
           <button type="submit" id="new_team">Add a new Team</button>
         </div>
       </form>

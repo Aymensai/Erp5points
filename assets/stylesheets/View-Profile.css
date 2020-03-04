@@ -54,7 +54,7 @@ a:active {
   padding-top: 10px;
 }
 .page-header {
-  background: #34495e;
+  background: #1d65ad;
   border-bottom: none;
   border-left: 1px solid #3a3a3a;
   box-shadow: 1px 3px 0 1px #ccc;
@@ -63,7 +63,7 @@ a:active {
   padding: 0;
 }
 .sidebar-left {
-  background: #34495e;
+  background: #1d65ad;
   box-shadow: -5px 0 0 #2f3139 inset;
   color: #777;
   display: table-cell;

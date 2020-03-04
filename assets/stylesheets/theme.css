@@ -54,7 +54,7 @@ a:active {
   padding-top: 10px;
 }
 .page-header {
-  background: #34495e;
+  background: #1d65ad;
   border-bottom: none;
   border-left: 1px solid #3a3a3a;
   box-shadow: 1px 3px 0 1px #ccc;
@@ -63,7 +63,7 @@ a:active {
   padding: 0;
 }
 .sidebar-left {
-  background: #34495e;
+  background: #1d65ad;
   box-shadow: -5px 0 0 #2f3139 inset;
   color: #777;
   display: table-cell;
@@ -2077,11 +2077,12 @@ ul.nav-main > li.nav-active > i {
 }
 ul.nav-main > li.nav-expanded > a {
   background: #21262d;
+  color: #fff;
 }
 ul.nav-main li a {
   font-size: 13px;
   font-size: 1.3rem;
-  color: #abb4be;
+  color: #000;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -2161,6 +2162,9 @@ ul.nav-main li .nav-children .nav-children li a {
 }
 ul.nav-main li .nav-children .nav-children .nav-children li a {
   padding: 6px 15px 6px 97px;
+}
+.nav-expanded .nav-children li a {
+  color: #fff;
 }
 .page-header {
   z-index: 1001;
