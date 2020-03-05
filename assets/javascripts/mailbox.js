@@ -1,13 +1,19 @@
 function mail() {
-    var users= JSON.parse(localStorage.getItem('connecteduser')) || "";
+    var users= JSON.parse(localStorage.getItem('user')) || [];
     var text= JSON.parse(localStorage.getItem('reclamations')) || [];
-    var name=users.Nom;
-    var Prenom=users.Prenom;
+  
 
     for (let i = 0; i < text.length; i++) {
+        for (let j = 0; j < users.length; j++) {
+           
+            
+      
        var ul = document.getElementById("ul-reclam");
- 
-        if (users.id==text[i].user) {
+       var name=users[j].Nom;
+       var Prenom=users[j].Prenom;
+       if (users[j].id==text[i].user) {
+           
+      
           var html=`<li class="unread">
           <a onclick="transit(${text[i].id})">
           <div class="col-sender">
@@ -20,16 +26,16 @@ function mail() {
           <div class="col-mail">
           <p class="m-none mail-content">
           <span class="subject" id="subject-${text[i].id}">${text[i].txt}</span>
-          <span class="mail-partial" id="subjects">${text[i].txt}</span>
+          
           </p>
           <p class="m-none mail-date"></p>
           </div>
           </a>
           </li>  `
           ul.innerHTML+=html;
-           
-    }  
-}
+        }
+        }
+} 
 }
 
 function transit(id) {
@@ -42,24 +48,24 @@ function transit(id) {
 function checkmail() {
     
     var id=JSON.parse(localStorage.getItem('current-reclam')) || "";
-    var users= JSON.parse(localStorage.getItem('connecteduser')) || "";
+    var users= JSON.parse(localStorage.getItem('user')) || [];
     var text= JSON.parse(localStorage.getItem('reclamations')) || [];
     let s = text.find(w => w.id == id);
     let i = text.indexOf(s);
-    
-    var name=users.Nom;
-    var Prenom=users.Prenom;
+    let u =users.find(x => x.id==s.user);
+    let j =users.indexOf(u);
+   
     var div = document.getElementById('divreclam');
-    console.log(text[i].Recstatus);
     
-    if (users.id==text[i].user) {
+    
+    if (users[j].id==text[i].user) {
         if (text[i].Recstatus=="Unresolved") {
             var html= `
    <div class="mailbox-email-header mb-lg">
    <h3 class="mailbox-email-subject m-none text-light">
    
    </h3>
-   <p class="mt-lg mb-none text-md" id="name"> From ${name+" "+Prenom}</p>
+   <p class="mt-lg mb-none text-md" id="name"> From ${users[j].Nom}</p>
    </div>
    <div class="mailbox-email-container">
    <div class="mailbox-email-screen">
@@ -71,7 +77,7 @@ function checkmail() {
    <a href="#" class="fa fa-mail-reply-all"></a>
    <a href="#" class="fa fa-star-o"></a>
     </div>
-   <p class="panel-title" id="">${name+" "+Prenom} <i class="fa fa-angle-right fa-fw"></i> You</p>
+   <p class="panel-title" id="">${users[j].Nom} <i class="fa fa-angle-right fa-fw"></i> You</p>
    </div>
    <div class="panel-body">
    
@@ -92,7 +98,7 @@ function checkmail() {
    <h3 class="mailbox-email-subject m-none text-light">
    
    </h3>
-   <p class="mt-lg mb-none text-md" id="name"> From ${name+" "+Prenom}</p>
+   <p class="mt-lg mb-none text-md" id="name"> From ${users[j].Nom}</p>
    </div>
    <div class="mailbox-email-container">
    <div class="mailbox-email-screen">
@@ -104,7 +110,7 @@ function checkmail() {
    <a href="#" class="fa fa-mail-reply-all"></a>
    <a href="#" class="fa fa-star-o"></a>
     </div>
-   <p class="panel-title" id="">${name+" "+Prenom} <i class="fa fa-angle-right fa-fw"></i> You</p>
+   <p class="panel-title" id="">${users[j].Nom} <i class="fa fa-angle-right fa-fw"></i> You</p>
    </div>
    <div class="panel-body">
    
