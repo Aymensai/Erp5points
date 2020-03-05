@@ -35,14 +35,14 @@ prod.forEach(p=>{
     if(p.prod_qt.slice(0,1) == "+"){
         p.prod_qt.slice(1,p.prod_qt.length)
         let v = parseInt(p.prod_qt.slice(1,p.prod_qt.length))
-        s =s+ + v;
+        s =s + v;
         newV.push(s)
         console.log(newV);
         
     }else if(p.prod_qt.slice(0,1) == "-"){
         p.prod_qt.slice(1,p.prod_qt.length)
         let v = parseInt(p.prod_qt.slice(1,p.prod_qt.length))
-        s =s+ - v;
+        s =s - v;
         newV.push(s)
         console.log(newV);
         

@@ -208,3 +208,51 @@ let cancel = document.querySelector("#modal-cancel");
         
       });
     };
+
+    let table = document.querySelector(".table");
+    let search = document.querySelector(".data_filter input");
+    let searchTable = term => {
+      let tr = table.getElementsByTagName("tr");
+      let filter = search.value.toUpperCase();
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    };
+    
+    search.addEventListener("keyup", () => {
+      const term = search.value.trim();
+      searchTable(term);
+    });
+
+
+    let searchView = document.querySelector(".data_filter-view input");
+    let tableView = document.querySelector(".table-view");
+    let searchTable_view = term => {
+      let tr = tableView.getElementsByTagName("tr");
+      let filter = searchView.value.toUpperCase();
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    };
+    
+    searchView.addEventListener("keyup", () => {
+      const term = searchView.value.trim();
+      searchTable_view(term);
+    });
+    
